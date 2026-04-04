@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochi Institute of Technology | Kerala's No.1 Training Institute</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a', // Adjust based on your logo
+                            red: '#dc2626',
+                            light: '#f3f4f6',
+                            dark: '#111827'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .swiper-slide { background-size: cover; background-position: center; }
+        .hero-overlay { background: linear-gradient(to right, rgba(17,24,39,0.95), rgba(17,24,39,0.4)); }
+        
+        /* Floating Buttons Additions */
+        .floating-action {
+            position: fixed;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            bottom: 24px;
+        }
+        .floating-whatsapp { background-color: #25D366; color: white; right: 24px; width: 60px; height: 60px; font-size: 32px; }
+        .floating-call { background-color: #1e3a8a; color: white; right: 100px; width: 60px; height: 60px; font-size: 24px; }
+        .floating-whatsapp:hover, .floating-call:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- Navbar -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+                    <!-- Adjusted for the provided logo -->
+                    <img src="./kitlogo (1).png" alt="Kochi Institute of Technology" class="h-12 sm:h-16 w-auto">
+                    <div class="flex flex-col justify-center">
+                        <span class="text-sm sm:text-lg font-bold text-gray-900 leading-tight">Kochi Institute</span>
+                        <span class="text-xs sm:text-sm font-semibold text-brand-red leading-tight">of Technology</span>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-brand-blue font-semibold transition">Home</a>
+                    <a href="#courses" class="text-gray-700 hover:text-brand-blue font-semibold transition">Courses</a>
+                    <a href="#about" class="text-gray-700 hover:text-brand-blue font-semibold transition">About Us</a>
+                    <a href="#why-kit" class="text-gray-700 hover:text-brand-blue font-semibold transition">Why KIT</a>
+                    <a href="#founders" class="text-gray-700 hover:text-brand-blue font-semibold transition">Founders</a>
+                </nav>
+                <div class="hidden md:flex">
+                    <a href="#courses" class="bg-brand-red text-white px-6 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">Apply Now</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-brand-blue focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="flex flex-col px-4 pt-2 pb-6 space-y-3">
+                <a href="#home" class="mobile-link text-gray-700 hover:text-brand-blue font-semibold py-2">Home</a>
+                <a href="#courses" class="mobile-link text-gray-700 hover:text-brand-blue font-semibold py-2">Courses</a>
+                <a href="#about" class="mobile-link text-gray-700 hover:text-brand-blue font-semibold py-2">About Us</a>
+                <a href="#why-kit" class="mobile-link text-gray-700 hover:text-brand-blue font-semibold py-2">Why KIT</a>
+                <a href="#founders" class="mobile-link text-gray-700 hover:text-brand-blue font-semibold py-2">Founders</a>
+                <a href="#courses" class="bg-brand-red text-white text-center px-6 py-3 rounded-full font-bold hover:bg-red-700 transition shadow mt-2">Apply Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Swiper) -->
+    <section id="home" class="relative pt-20 h-screen">
+        <div class="swiper mySwiper h-full w-full">
+            <div class="swiper-wrapper">
+                
+                <!-- Slide 1 -->
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 hero-overlay flex items-center">
+                        <div class="container mx-auto px-6 lg:px-12 w-full text-white" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="text-brand-red font-bold tracking-wider uppercase mb-2 block">Kochi Institute of Technology</span>
+                            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight max-w-4xl">Kerala’s No.1 Short Term Job-Oriented Training Institute.</h1>
+                            <p class="text-xl md:text-2xl mb-10 max-w-3xl text-gray-300">Advance your skills and career with expert-led courses for 10th, Plus 2, Diploma, Degree, B. Tech students and professionals.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#courses" class="bg-brand-red text-white px-8 py-4 rounded-full font-bold hover:bg-red-700 transition shadow-lg cursor-pointer">Explore Courses</a>
+                                <a href="#about" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-brand-dark transition shadow-lg cursor-pointer">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 hero-overlay flex items-center">
+                        <div class="container mx-auto px-6 lg:px-12 w-full text-white">
+                            <span class="text-brand-red font-bold tracking-wider uppercase mb-2 block">Industry Grade Training</span>
+                            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight max-w-4xl">Hands-on Experience with Modern Technologies.</h1>
+                            <p class="text-xl md:text-2xl mb-10 max-w-3xl text-gray-300">Master CAD-CAM, CNC, 3D Printing, EV Tech and more. Get specialized certifications from Skill India.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#courses" class="bg-brand-red text-white px-8 py-4 rounded-full font-bold hover:bg-red-700 transition shadow-lg cursor-pointer">Apply Now</a>
+                                <a href="#about" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-brand-dark transition shadow-lg cursor-pointer">Our Vision</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 hero-overlay flex items-center">
+                        <div class="container mx-auto px-6 lg:px-12 w-full text-white">
+                            <span class="text-brand-red font-bold tracking-wider uppercase mb-2 block">100% Placement Assistance</span>
+                            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight max-w-4xl">Your Bridge from Classroom to the Industry.</h1>
+                            <p class="text-xl md:text-2xl mb-10 max-w-3xl text-gray-300">Join our alumni who have successfully advanced their careers via our industry partnerships.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#courses" class="bg-brand-red text-white px-8 py-4 rounded-full font-bold hover:bg-red-700 transition shadow-lg cursor-pointer">Start Journey</a>
+                                <a href="#why-kit" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-brand-dark transition shadow-lg cursor-pointer">Why Choose Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next" style="color: white;"></div>
+            <div class="swiper-button-prev" style="color: white;"></div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="py-16 bg-brand-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-user-graduate text-4xl mb-4 text-brand-red"></i>
+                    <h3 class="text-4xl font-bold mb-2"><span class="stat-counter" data-target="5000">0</span>+</h3>
+                    <p class="text-xl text-blue-100">Students Trained</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-briefcase text-4xl mb-4 text-brand-red"></i>
+                    <h3 class="text-4xl font-bold mb-2"><span class="stat-counter" data-target="100">0</span>%</h3>
+                    <p class="text-xl text-blue-100">Placement Assistance</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-book-open text-4xl mb-4 text-brand-red"></i>
+                    <h3 class="text-4xl font-bold mb-2"><span class="stat-counter" data-target="20">0</span>+</h3>
+                    <p class="text-xl text-blue-100">Expert-Led Courses</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <i class="fa-solid fa-building text-4xl mb-4 text-brand-red"></i>
+                    <h3 class="text-4xl font-bold mb-2"><span class="stat-counter" data-target="50">0</span>+</h3>
+                    <p class="text-xl text-blue-100">Hiring Partners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Premium Programs</h2>
+                <div class="w-24 h-1 bg-brand-red mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">We provide Master (3 months), Diploma (6 months), and Advanced Diploma (12 months) courses alongside valuable internships.</p>
+            </div>
+
+            <!-- Tabs/Categories Simulation (Layout purpose) -->
+            
+            <div class="space-y-16">
+                <!-- Advanced Diploma -->
+                <div>
+                    <h3 class="text-3xl font-bold border-l-4 border-brand-red pl-4 mb-8" data-aos="fade-right">Advanced Diploma Courses <span class="text-lg text-gray-500 font-normal">(12 Months)</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Course 1 -->
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./assets/courses/additive-subtractive-manufacturing.jpg" alt="Additive Manufacturing" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Additive & Subtractive Manufacturing</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Comprehensive training in modern manufacturing execution, 3D printing mapping, and CNC subtractive methods.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./assets/courses/manufacturing-technology.jpg" alt="Manufacturing Technology" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Manufacturing Technology</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Master production techniques, industrial standards, and smart factory execution methodologies.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./assets/courses/mobile-phone-technology.jpg" alt="Mobile Phone tech" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Mobile Phone Technology</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Deep-dive into component-level smartphone design, architecture, service and advanced troubleshooting.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diploma Courses -->
+                <div>
+                    <h3 class="text-3xl font-bold border-l-4 border-brand-red pl-4 mb-8" data-aos="fade-right">Diploma Courses <span class="text-lg text-gray-500 font-normal">(6 Months)</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Course items -->
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./assets/courses/cad-cam-cnc.jpg" alt="CAD CAM" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Diploma in CAD-CAM-CNC</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Complete instruction covering design workflows, machine tooling, and CNC operational practices.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./assets/courses/mobile-servicing-technology.jpg" alt="Mobile Servicing" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Mobile Servicing Technology</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Practical hardware/software smartphone servicing. Gain expertise to launch your own service venture.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./assets/courses/civil-cad.jpg" alt="Civil CAD" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Diploma in Civil CAD</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Design architecture and civil infrastructure professionally with the latest industry-standard software.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master Courses -->
+                <div>
+                    <h3 class="text-3xl font-bold border-l-4 border-brand-red pl-4 mb-8" data-aos="fade-right">Master Courses <span class="text-lg text-gray-500 font-normal">(3 Months)</span></h3>
+                    <!-- Scrolling Grid / Sub-courses -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./assets/courses/cad-cam-cnc.jpg" alt="CAD CAM" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">CAD-CAM-CNC</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Fast-track mastery course.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./assets/courses/additive-subtractive-manufacturing.jpg" alt="Laser Cut Technology" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Laser Cut Technology</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Industrial laser programming.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./assets/courses/cad-cam-cnc.jpg" alt="CNC Router Technology" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">CNC Router Technology</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Precision machining and routing.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./assets/courses/3d-printing.jpg" alt="3D Printing" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">3D Printing</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Rapid prototyping & modeling.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./assets/courses/civil-cad.jpg" alt="Civil CAD" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Civil CAD</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Infrastructure design essentials.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./assets/courses/ev-technology.jpg" alt="EV Battery Technology" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">EV Battery Technology Training</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Cutting-edge EV power systems.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./assets/courses/ev-technology.jpg" alt="EV Technology Course" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">EV Technology Course</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Comprehensive electric vehicle fundamentals.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./assets/courses/home-appliance-repairing.jpg" alt="Home Appliance Repairing" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Home Appliance Repairing</h4>
+                                <p class="text-gray-600 mb-6 text-sm">Practical troubleshooting and service skills.</p>
+                                <div class="flex justify-between items-center space-x-2">
+                                    <button class="flex-1 bg-brand-blue text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Apply</button>
+                                    <button class="flex-1 border-2 border-brand-blue text-brand-blue px-4 py-2 rounded font-semibold hover:bg-blue-50 transition">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-brand-blue transform rotate-3 rounded-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&w=1000&q=80" alt="Students learning" class="relative rounded-2xl shadow-xl z-10 w-full object-cover h-[500px]">
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <span class="text-brand-red font-bold uppercase tracking-wider">About Us</span>
+                    <h2 class="text-4xl font-bold text-gray-900 mt-2 mb-6">Dream Bigger and Shine Brighter</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Kochi Institute of Technology (KIT) is committed in its endeavor of training aspirants in their domain of choice for the beginning of a successful career. Our Job-oriented training process instills the confidence to invent, innovate, create and lead from the front. So come join us and we promise to enable you to dream bigger and shine brighter.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-4 text-green-600">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-gray-800 font-semibold text-lg">Industry grade content</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-4 text-green-600">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-gray-800 font-semibold text-lg">Career Guidance Session</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-4 text-green-600">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-gray-800 font-semibold text-lg">100% Placement Assistance</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-4 text-green-600">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-gray-800 font-semibold text-lg">Excellence Certified</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why KIT -->
+    <section id="why-kit" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose KIT?</h2>
+                <div class="w-24 h-1 bg-brand-red mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center p-8 border hover:border-brand-blue rounded-xl shadow-sm hover:shadow-xl transition bg-gray-50" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-blue text-3xl">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Expertise</h3>
+                    <p class="text-gray-600">Learn from experienced professionals with real industry backgrounds and continuous domain knowledge.</p>
+                </div>
+                <div class="text-center p-8 border hover:border-brand-blue rounded-xl shadow-sm hover:shadow-xl transition bg-brand-blue text-white transform md:-translate-y-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Support</h3>
+                    <p class="text-blue-100">Resume building, interview coaching & lifetime membership for continuous career growth and updates.</p>
+                </div>
+                <div class="text-center p-8 border hover:border-brand-blue rounded-xl shadow-sm hover:shadow-xl transition bg-gray-50" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-blue text-3xl">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Certified</h3>
+                    <p class="text-gray-600">Get government & industry-recognized certifications that dramatically boost your resume and career.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Partners -->
+    <section class="py-16 bg-gray-50 border-t">
+        <div class="container mx-auto px-4">
+            <h3 class="text-center text-2xl font-bold text-gray-700 mb-10">Our Certifications & Hiring Partners</h3>
+            
+            <div class="flex flex-wrap justify-center items-center gap-12 sm:gap-20 opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                <!-- Certifications -->
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-award text-4xl text-gray-600 mb-2"></i>
+                    <span class="font-bold text-sm text-gray-600">Skill India</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-certificate text-4xl text-gray-600 mb-2"></i>
+                    <span class="font-bold text-sm text-gray-600">STED</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-gear text-4xl text-gray-600 mb-2"></i>
+                    <span class="font-bold text-sm text-gray-600">Mastercam</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-microchip text-4xl text-gray-600 mb-2"></i>
+                    <span class="font-bold text-sm text-gray-600">Kochi Makers</span>
+                </div>
+                
+                <!-- Partners Split -->
+                <div class="h-10 border-l border-gray-300 hidden md:block"></div>
+                
+                <!-- Partners -->
+                <div class="flex flex-col items-center">
+                    <i class="fa-brands fa-lg leading-none" style="font-size: 2.5rem; color: #a50034; font-weight: 800; font-family: sans-serif;">LG</i>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-bold text-2xl tracking-tighter" style="color: #1428a0;">SAMSUNG</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Founders</h2>
+                <div class="w-24 h-1 bg-brand-red mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Founder 1 -->
+                <div class="group text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-white group-hover:border-brand-blue transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&w=400&q=80" alt="Founder 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">John Doe</h3>
+                    <p class="text-brand-blue font-semibold mb-3">CEO & Co-Founder</p>
+                    <p class="text-gray-600 text-sm px-4">Visionary leader focused on empowering youth with cutting-edge manufacturing skills and job security.</p>
+                </div>
+                <!-- Founder 2 -->
+                <div class="group text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-white group-hover:border-brand-blue transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&w=400&q=80" alt="Founder 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Jane Smith</h3>
+                    <p class="text-brand-blue font-semibold mb-3">COO & Co-Founder</p>
+                    <p class="text-gray-600 text-sm px-4">Operations expert mapping local talent to national and international hiring organizations effectively.</p>
+                </div>
+                <!-- Founder 3 -->
+                <div class="group text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-white group-hover:border-brand-blue transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&w=400&q=80" alt="Founder 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Dr. Alan Turing</h3>
+                    <p class="text-brand-blue font-semibold mb-3">CTO & Co-Founder</p>
+                    <p class="text-gray-600 text-sm px-4">Tech evangelist ensuring our curriculum stays ahead of the curve in 3D Printing, EV tech and CAM mapping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-300 pt-16 pb-24 md:pb-8 border-t-4 border-brand-red">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 bg-white p-2 rounded mb-6 w-max">
+                        <img src="./kitlogo (1).png" alt="KIT Logo" class="h-12 w-auto">
+                        <div class="flex flex-col justify-center">
+                            <span class="text-base font-bold text-gray-900 leading-tight">Kochi Institute</span>
+                            <span class="text-xs font-semibold text-brand-red leading-tight">of Technology</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-6">Enabling you to dream bigger and shine brighter with comprehensive training and reliable placement assistance.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition text-xl"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#courses" class="hover:text-white transition">All Courses</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Popular Courses</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Diploma in CAD-CAM-CNC</a></li>
+                        <li><a href="#" class="hover:text-white transition">EV Technology</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mobile Servicing</a></li>
+                        <li><a href="#" class="hover:text-white transition">3D Printing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 mr-3 text-brand-red"></i> Kochi Institute of Technology, <br> Kerala, India</li>
+                        <li class="flex items-center"><i class="fa-solid fa-phone mr-3 text-brand-red"></i> 9846466609</li>
+                        <li class="flex items-center"><i class="fa-solid fa-envelope mr-3 text-brand-red"></i> info@kitkerala.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 Kochi Institute of Technology. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Actions -->
+    <a href="tel:9846466609" class="floating-action floating-call" title="Call Us">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+    <a href="https://wa.me/919846466609" class="floating-action floating-whatsapp" title="WhatsApp Us" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts for Functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Init Swiper
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4500,
+                disableOnInteraction: false,
+            }
+        });
+
+        // Init Animations on Scroll
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('py-0');
+                header.classList.remove('py-2');
+            } else {
+                header.classList.add('py-2');
+                header.classList.remove('py-0');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- NEW FEATURES: Number Counter, Tilt Affect & Mouse Trailer --- //
+        
+        // 1. Triggered Number Animation using Intersection Observer
+        const counters = document.querySelectorAll('.stat-counter');
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // If element comes into view
+                if (entry.isIntersecting) {
+                    const targetEl = entry.target;
+                    const finalValue = parseInt(targetEl.getAttribute('data-target'));
+                    const duration = 2000; // Counter takes 2 seconds
+                    let startTimestamp = null;
+                    
+                    const step = (timestamp) => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                        // Easing function for smoother finish
+                        const easeOutQuad = 1 - (1 - progress) * (1 - progress); 
+                        const currentVal = Math.floor(easeOutQuad * finalValue);
+                        
+                        targetEl.innerText = (finalValue >= 1000) ? currentVal.toLocaleString() : currentVal;
+                        
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            targetEl.innerText = (finalValue >= 1000) ? finalValue.toLocaleString() : finalValue;
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                    // Stop observing once animated so it only happens once
+                    observer.unobserve(targetEl);
+                }
+            });
+        }, { threshold: 0.5 }); // Triggers when 50% of element is visible
+
+        counters.forEach(counter => counterObserver.observe(counter));
+    </script>
+</body>
+</html>
