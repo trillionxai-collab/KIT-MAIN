@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | Kochi Institute of Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',
+                            red: '#dc2626',
+                            light: '#f3f4f6',
+                            dark: '#111827'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="./index.html" class="flex items-center gap-3">
+                    <img src="./kitlogo (1).png" alt="Kochi Institute of Technology" class="h-12 w-auto">
+                    <div>
+                        <p class="text-base sm:text-lg font-bold text-gray-900 leading-tight">Kochi Institute</p>
+                        <p class="text-xs sm:text-sm font-semibold text-brand-red leading-tight">of Technology</p>
+                    </div>
+                </a>
+                <a href="./index.html#courses" class="text-sm sm:text-base font-semibold text-brand-blue hover:text-brand-red transition">Back to Courses</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+        <section class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 items-start">
+            <div class="bg-brand-blue text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl">
+                <span class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-100">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    Student Application
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold mt-4 mb-4 leading-tight">Apply for Your Preferred Course</h1>
+                <p class="text-blue-100 text-base sm:text-lg leading-relaxed">Fill in your details and submit the form. Your application details will be sent directly to KIT admissions on WhatsApp for quick follow-up.</p>
+
+                <div class="mt-8 grid sm:grid-cols-2 gap-4">
+                    <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                        <p class="text-sm uppercase tracking-wider text-blue-100 mb-2">What You Need</p>
+                        <p class="font-semibold">Full name, contact details, date of birth, education, and selected course.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                        <p class="text-sm uppercase tracking-wider text-blue-100 mb-2">Admission Support</p>
+                        <p class="font-semibold">Our team will review your details and contact you with the next steps.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100">
+                <form id="apply-form" class="space-y-5">
+                    <div>
+                        <label for="full-name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                        <input id="full-name" name="fullName" type="text" required class="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="Enter full name">
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <input id="email" name="email" type="email" required class="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="Enter email address">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                            <input id="phone" name="phone" type="tel" required pattern="[0-9+ ]{10,15}" class="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="Enter phone number">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="dob" class="block text-sm font-semibold text-gray-700 mb-2">Date of Birth</label>
+                            <input id="dob" name="dob" type="date" required class="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="education" class="block text-sm font-semibold text-gray-700 mb-2">Highest Education</label>
+                            <select id="education" name="education" required class="w-full rounded-2xl border border-gray-300 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                <option value="">Select highest education</option>
+                                <option value="10th">10th</option>
+                                <option value="12th">12th</option>
+                                <option value="Diploma">Diploma</option>
+                                <option value="ITI">ITI</option>
+                                <option value="Any Degree">Any Degree</option>
+                                <option value="B.Tech">B.Tech</option>
+                                <option value="Post Graduation">Post Graduation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="course" class="block text-sm font-semibold text-gray-700 mb-2">Select Course</label>
+                        <select id="course" name="course" required class="w-full rounded-2xl border border-gray-300 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                            <option value="">Select a course</option>
+                            <option value="Additive & Subtractive Manufacturing">Additive & Subtractive Manufacturing</option>
+                            <option value="Manufacturing Technology">Manufacturing Technology</option>
+                            <option value="Mobile Phone Technology">Mobile Phone Technology</option>
+                            <option value="Diploma in CAD-CAM-CNC">Diploma in CAD-CAM-CNC</option>
+                            <option value="Mobile Servicing Technology">Mobile Servicing Technology</option>
+                            <option value="Diploma in Civil CAD">Diploma in Civil CAD</option>
+                            <option value="CAD-CAM-CNC (Master Course)">CAD-CAM-CNC (Master Course)</option>
+                            <option value="Laser Cut Technology">Laser Cut Technology</option>
+                            <option value="CNC Router Technology">CNC Router Technology</option>
+                            <option value="3D Printing">3D Printing</option>
+                            <option value="Civil CAD (Master Course)">Civil CAD (Master Course)</option>
+                            <option value="EV Battery Technology Training">EV Battery Technology Training</option>
+                            <option value="EV Technology Course">EV Technology Course</option>
+                            <option value="Home Appliance Repairing">Home Appliance Repairing</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-red text-white py-3.5 rounded-2xl font-bold hover:bg-red-700 transition shadow-lg">Submit on WhatsApp</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const form = document.getElementById('apply-form');
+        const courseSelect = document.getElementById('course');
+        const whatsappNumber = '919846466609';
+
+        const params = new URLSearchParams(window.location.search);
+        const selectedCourse = params.get('course');
+
+        if (selectedCourse) {
+            courseSelect.value = selectedCourse;
+        }
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!form.reportValidity()) {
+                return;
+            }
+
+            const formData = new FormData(form);
+            const message = [
+                'New Student Application',
+                '',
+                `Full Name: ${formData.get('fullName')}`,
+                `Email: ${formData.get('email')}`,
+                `Phone Number: ${formData.get('phone')}`,
+                `Date of Birth: ${formData.get('dob')}`,
+                `Highest Education: ${formData.get('education')}`,
+                `Selected Course: ${formData.get('course')}`
+            ].join('\n');
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
