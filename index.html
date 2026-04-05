@@ -33,24 +33,12 @@
         .swiper-slide { background-size: cover; background-position: center; }
         .hero-overlay { background: linear-gradient(to right, rgba(17,24,39,0.95), rgba(17,24,39,0.4)); }
         
-        /* Floating Buttons Additions */
-        .floating-action {
-            position: fixed;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9999px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-            bottom: 24px;
+        .mobile-bottom-actions {
+            padding-bottom: env(safe-area-inset-bottom);
         }
-        .floating-whatsapp { background-color: #25D366; color: white; right: 24px; width: 60px; height: 60px; font-size: 32px; }
-        .floating-call { background-color: #1e3a8a; color: white; right: 100px; width: 60px; height: 60px; font-size: 24px; }
-        .floating-whatsapp:hover, .floating-call:hover { transform: scale(1.1); }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50">
+<body class="font-sans text-gray-800 bg-gray-50 pb-16 md:pb-0">
 
     <!-- Navbar -->
     <header class="fixed w-full bg-white shadow-md z-50">
@@ -596,11 +584,25 @@
         </div>
     </footer>
 
-    <!-- Fixed Floating Actions -->
-    <a href="tel:9846466609" class="floating-action floating-call" title="Call Us">
+    <!-- Mobile Bottom Actions -->
+    <div class="mobile-bottom-actions fixed bottom-0 left-0 right-0 z-50 md:hidden shadow-2xl">
+        <div class="grid grid-cols-2">
+            <a href="tel:9846466609" class="bg-brand-blue text-white font-bold py-4 flex items-center justify-center gap-2" title="Call Now">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call Now</span>
+            </a>
+            <a href="https://wa.me/919846466609" class="bg-[#25D366] text-white font-bold py-4 flex items-center justify-center gap-2" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Desktop Floating Actions -->
+    <a href="tel:9846466609" class="hidden md:flex fixed bottom-6 right-24 z-50 w-14 h-14 items-center justify-center rounded-full bg-brand-blue text-white text-xl shadow-lg transition-transform duration-300 hover:scale-110" title="Call Us">
         <i class="fa-solid fa-phone"></i>
     </a>
-    <a href="https://wa.me/919846466609" class="floating-action floating-whatsapp" title="WhatsApp Us" target="_blank">
+    <a href="https://wa.me/919846466609" class="hidden md:flex fixed bottom-6 right-6 z-50 w-14 h-14 items-center justify-center rounded-full bg-[#25D366] text-white text-2xl shadow-lg transition-transform duration-300 hover:scale-110" title="WhatsApp Us" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
