@@ -606,6 +606,11 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Scroll To Top Button -->
+    <button id="scroll-to-top" type="button" aria-label="Scroll to top" class="fixed right-4 md:right-6 bottom-24 md:bottom-24 z-50 w-12 h-12 rounded-full bg-brand-red text-white shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none hover:bg-red-700 hover:-translate-y-1">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- Scripts for Functionality -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -651,6 +656,21 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Show scroll-to-top button after scrolling down
+        const scrollTopBtn = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 250) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // --- NEW FEATURES: Number Counter, Tilt Affect & Mouse Trailer --- //
